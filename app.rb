@@ -17,19 +17,29 @@ get("/square/result") do
   erb(:square_out)
 end
 
+get("/square_root/new") do
+
+erb(:root_in)
+end
+
+get("/root/result") do
+
+erb(:root_out)
+end
+
+
+
+
+
+
 =begin
 
-
-
-get("square_root/new") do
-
-
-end
 
 get("payment/new") do
 
 
 end
+
 get("random/new") do
  
 =end
