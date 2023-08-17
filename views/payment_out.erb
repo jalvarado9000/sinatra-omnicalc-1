@@ -3,17 +3,18 @@
 <dl>
 
 <dt>APR</dt>
-<dd><%= params.fetch("user_apr")%></dd>
+<dd><%=  @apr %></dd>
 
 <dt>Number of years</dt>
-<dd><%= params.fetch("user_years")%></dd>
+<dd><%= @years %></dd>
 
 <dt>Principal</dt>
-<dd><%= params.fetch("user_pv")%></dd>
+<dd><%= @principal %></dd>
 
 <dt>Payment</dt>
-<dd><%= params.fetch("user_pv")%></dd>
+
+<dd>$<%= @payment %></dd>
 
 </dl>
 
-<a href="/square_root/new">Calculate another square root</a>
+<a href="/square_root/new">Calculate another payment</a>
