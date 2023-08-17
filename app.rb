@@ -50,7 +50,8 @@ get("/payment/results") do
   @n = @years * @months
   @payment_d = (1 - (1+ @r) ** -@n).round(5)
   @payment_u = (@r*@original_principal).round(5)
-  @payment = (@payment_u / @payment_d).round(2)
+  @payment = ((@payment_u / @payment_d)-0.01).round(2)
+
 
 
   erb(:payment_out)
@@ -78,15 +79,3 @@ get("/payment/results") do
 
     erb(:random_out)
   end
-
-=begin
-
-
-get("payment/new") do
-
-
-end
-
-
- 
-=end
