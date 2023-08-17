@@ -29,8 +29,16 @@ end
 
 
 
+get("/payment/new") do
+
+erb(:payment_in)
+end
 
 
+get("/payment/result") do
+
+  erb(:payment_out)
+  end
 
 =begin
 
