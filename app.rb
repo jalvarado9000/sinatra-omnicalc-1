@@ -44,13 +44,13 @@ get("/payment/results") do
   @years =  params.fetch("user_years").to_i
   @principal = "$" + format("%0.2f", params.fetch("user_pv")).reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
 
-  @actual_apr = (@original_apr/100).round(5)
+  @actual_apr = (@original_apr/100).round(10)
   @months = 12
-  @r = (@actual_apr/@months).round(5)
+  @r = (@actual_apr/@months).round(10)
   @n = @years * @months
-  @payment_d = (1 - (1+ @r) ** -@n).round(5)
-  @payment_u = (@r*@original_principal).round(5)
-  @payment = ((@payment_u / @payment_d)-0.01).round(2)
+  @payment_d = (1 - (1+ @r) ** -@n).round(10)
+  @payment_u = (@r*@original_principal).round(10)
+  @payment = ((@payment_u / @payment_d)).round(4)
 
 
 
@@ -72,9 +72,6 @@ get("/payment/results") do
         @user_min, @user_max = @user_max, @user_min
       end
       
-    
-
-
     @random_number = rand(@user_min..@user_max)
 
     erb(:random_out)
